@@ -3,90 +3,179 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bryforge // Phase1</title>
-  <meta name="description" content="Bryforge is a startup software development company by Chase Bryan. Visit Phase1, the secure open-source virtual OS console and advanced operator kernel built in Rust.">
+  <title>Bryforge // Startup Software Development Company</title>
+  <meta name="description" content="Bryforge is a startup software development company founded by Chase Bryan, building secure, polished, developer-first systems, apps, automation, and open-source projects like Phase1.">
+  <meta name="keywords" content="Bryforge, Chase Bryan, software development company, startup software company, Phase1, developer tools, custom software, automation, apps, infrastructure, Rust">
+  <meta name="author" content="Chase Bryan, Bryforge">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#050711">
+  <meta name="theme-color" content="#030305">
   <link rel="canonical" href="https://bryforge.github.io/">
-  <meta property="og:title" content="Bryforge // Phase1">
-  <meta property="og:description" content="Bryforge builds secure, polished, developer-first software. Explore Phase1, the Rust-powered advanced operator kernel.">
+  <meta property="og:title" content="Bryforge // Startup Software Development Company">
+  <meta property="og:description" content="Dark, focused, developer-first software company building secure systems and open-source projects like Phase1.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bryforge.github.io/">
+  <meta property="og:site_name" content="Bryforge">
   <meta property="og:image" content="https://bryforge.github.io/phase1/assets/phase1-banner.svg">
   <meta property="og:image:alt" content="Phase1 neon rainbow advanced operator kernel logo">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bryforge // Phase1">
-  <meta name="twitter:description" content="Bryforge builds secure, polished, developer-first software. Explore Phase1, the Rust-powered advanced operator kernel.">
+  <meta name="twitter:title" content="Bryforge // Startup Software Development Company">
+  <meta name="twitter:description" content="Developer-first software, secure systems, apps, automation, and Phase1 by Bryforge.">
   <meta name="twitter:image" content="https://bryforge.github.io/phase1/assets/phase1-banner.svg">
-  <meta http-equiv="refresh" content="0; url=https://bryforge.github.io/phase1/">
-  <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      color: #f6fbff;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 20% 18%, rgba(255, 61, 242, 0.22), transparent 28rem),
-        radial-gradient(circle at 78% 10%, rgba(35, 247, 255, 0.24), transparent 26rem),
-        linear-gradient(180deg, #03040b, #060817 52%, #01020a);
-    }
-    .card {
-      width: min(760px, 100%);
-      padding: clamp(28px, 6vw, 58px);
-      border-radius: 34px;
-      text-align: center;
-      background: linear-gradient(145deg, rgba(8, 16, 35, 0.82), rgba(255, 255, 255, 0.05));
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: 0 30px 120px rgba(35, 247, 255, 0.14);
-      backdrop-filter: blur(24px);
-    }
-    img {
-      width: min(360px, 92%);
-      filter: drop-shadow(0 0 32px rgba(35, 247, 255, 0.26));
-      mix-blend-mode: screen;
-    }
-    h1 {
-      margin: 20px 0 10px;
-      font-size: clamp(2.3rem, 8vw, 5rem);
-      line-height: 0.92;
-      letter-spacing: -0.07em;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ff4438, #ffe85f, #54ff7a, #29f8ff, #5d85ff, #ff3df2, #ff4438);
-      background-size: 220% 100%;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: rainbow 7s linear infinite;
-    }
-    p { color: #a8b9cf; line-height: 1.7; }
-    a {
-      display: inline-flex;
-      margin-top: 18px;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      border-radius: 999px;
-      color: #07101d;
-      text-decoration: none;
-      font-weight: 950;
-      background: linear-gradient(90deg, #23f7ff, #53ff85, #ffe95c, #ff3df2);
-      background-size: 260% 100%;
-      animation: rainbow 5s linear infinite;
-    }
-    @keyframes rainbow { to { background-position: 220% 0; } }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bryforge",
+    "url": "https://bryforge.github.io/",
+    "founder": {
+      "@type": "Person",
+      "name": "Chase Bryan",
+      "jobTitle": "Computer Scientist and Software Developer"
+    },
+    "description": "Bryforge is a startup software development company building secure, polished, developer-first systems, applications, automation, infrastructure, and open-source projects.",
+    "sameAs": [
+      "https://github.com/Bryforge",
+      "https://bryforge.github.io/phase1/"
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main class="card">
-    <img src="https://bryforge.github.io/phase1/assets/phase1-banner.svg" alt="Phase1 neon rainbow advanced operator kernel logo">
-    <h1>Bryforge</h1>
-    <p>Redirecting to Phase1, the secure open-source virtual OS console and advanced operator kernel built in Rust by Bryforge.</p>
-    <a href="https://bryforge.github.io/phase1/">Open Phase1</a>
-  </main>
+  <canvas id="smoke-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ember ember-a" aria-hidden="true"></div>
+  <div class="ember ember-b" aria-hidden="true"></div>
+
+  <header class="shell">
+    <nav class="nav glass" aria-label="Bryforge navigation">
+      <a class="brand" href="#top" aria-label="Bryforge home">
+        <span class="brand-mark">B</span>
+        <span>Bryforge</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="./projects/">Directory</a>
+        <a href="https://bryforge.github.io/phase1/">Phase1</a>
+        <a href="#support">Support</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero glass" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">startup software development company</p>
+          <h1 id="hero-title">Forging serious software from dark ideas into working systems.</h1>
+          <p class="hero-text">
+            Bryforge is a startup software development company founded by Chase Bryan. We build secure,
+            polished, developer-first systems: custom software, apps, automation, infrastructure,
+            terminal-first tools, and open-source experiments like Phase1.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="./projects/">View Projects</a>
+            <a class="button ghost" href="https://bryforge.github.io/phase1/">Open Phase1</a>
+            <a class="button coffee" href="https://www.buymeacoffee.com/bryforge" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+          </div>
+        </div>
+
+        <div class="forge-panel" aria-label="Bryforge system panel">
+          <div class="forge-core">
+            <span class="core-ring ring-a"></span>
+            <span class="core-ring ring-b"></span>
+            <span class="core-ring ring-c"></span>
+            <span class="core-letter">B</span>
+          </div>
+          <div class="forge-readout">
+            <span>BUILD MODE</span>
+            <strong>SECURE · POLISHED · DEVELOPER-FIRST</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <p class="eyebrow">what Bryforge builds</p>
+          <h2 id="services-title">Software company front for serious builders.</h2>
+        </div>
+        <div class="card-grid three">
+          <article class="smoke-card">
+            <span class="number">01</span>
+            <h3>Custom software</h3>
+            <p>Purpose-built applications, internal tools, dashboards, and workflows designed around real users and real operations.</p>
+          </article>
+          <article class="smoke-card">
+            <span class="number">02</span>
+            <h3>Developer systems</h3>
+            <p>Terminal-first tools, automation, project scaffolding, storage workflows, language runtime experiments, and open-source systems.</p>
+          </article>
+          <article class="smoke-card">
+            <span class="number">03</span>
+            <h3>Secure foundations</h3>
+            <p>Security-minded design, safe defaults, clear permissions, auditability, and polished software that can grow with a product.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects glass" aria-labelledby="projects-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">project directory preview</p>
+            <h2 id="projects-title">A home for every Bryforge project.</h2>
+          </div>
+          <a class="small-link" href="./projects/">Open full directory →</a>
+        </div>
+
+        <div class="project-feature">
+          <div>
+            <span class="status-pill">flagship project</span>
+            <h3>Phase1 // Advanced Operator Kernel</h3>
+            <p>
+              Phase1 is a secure, open-source virtual OS console built in Rust: simulated kernel,
+              VFS, process table, audit log, guarded browser, language roadmap, storage/Git tooling,
+              and a terminal-first operator interface.
+            </p>
+            <div class="project-actions">
+              <a class="button primary" href="https://bryforge.github.io/phase1/">Open Phase1 Website</a>
+              <a class="button ghost" href="https://github.com/Bryforge/phase1" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+          </div>
+          <img src="https://bryforge.github.io/phase1/assets/phase1-banner.svg" alt="Phase1 neon rainbow logo">
+        </div>
+      </section>
+
+      <section class="section manifesto" aria-labelledby="manifesto-title">
+        <p class="eyebrow">company signal</p>
+        <h2 id="manifesto-title">Dark interface. Clean systems. Real output.</h2>
+        <p>
+          Bryforge is built around the idea that software should feel powerful without becoming reckless:
+          sharp interfaces, safe defaults, strong engineering, readable docs, and systems that operators can trust.
+        </p>
+      </section>
+
+      <section id="support" class="section support glass" aria-labelledby="support-title">
+        <div>
+          <p class="eyebrow">support Bryforge</p>
+          <h2 id="support-title">Help fund Phase1 and future Bryforge builds.</h2>
+          <p>
+            Support helps keep development moving on Phase1, the Bryforge website, documentation,
+            language runtime support, and future software projects.
+          </p>
+        </div>
+        <a class="coffee-card" href="https://www.buymeacoffee.com/bryforge" target="_blank" rel="noopener noreferrer">
+          <span>☕</span>
+          <strong>Buy me a coffee</strong>
+          <small>Support the build</small>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Bryforge // Software Development Company</span>
+      <span>Founded by Chase Bryan</span>
+    </footer>
+  </header>
+
+  <script src="./smoke.js"></script>
 </body>
 </html>
