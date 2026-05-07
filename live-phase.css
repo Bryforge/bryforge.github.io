@@ -1,0 +1,221 @@
+/* Makes the Phase1 project preview feel alive on the Bryforge company site. */
+.project-feature-live {
+  grid-template-columns: minmax(0, 1fr) minmax(290px, 0.78fr);
+  overflow: hidden;
+}
+
+.live-pill {
+  color: #23f7ff;
+  text-shadow: 0 0 20px rgba(35, 247, 255, 0.7);
+}
+
+.phase-live-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+  padding: clamp(18px, 4vw, 34px);
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(35, 247, 255, 0.12), transparent 18rem),
+    radial-gradient(circle at 35% 60%, rgba(255, 61, 242, 0.12), transparent 16rem),
+    linear-gradient(145deg, rgba(3, 4, 8, 0.96), rgba(18, 20, 28, 0.82));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 0 70px rgba(35, 247, 255, 0.06),
+    0 0 60px rgba(35, 247, 255, 0.08);
+}
+
+.phase-live-stage::before {
+  content: "";
+  position: absolute;
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #ff4438, #ffe85f, #54ff7a, #29f8ff, #5d85ff, #ff3df2, #ff4438);
+  filter: blur(28px);
+  opacity: 0.36;
+  animation: phase-spin 18s linear infinite;
+  z-index: -2;
+}
+
+.phase-live-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 6px),
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.14) 45%, transparent 52%);
+  opacity: 0.14;
+  mix-blend-mode: screen;
+  transform: translateX(-55%);
+  animation: phase-sheen 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.phase-live-stage img {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 390px);
+  filter:
+    saturate(1.24)
+    contrast(1.1)
+    drop-shadow(0 0 26px rgba(35, 247, 255, 0.28))
+    drop-shadow(0 0 48px rgba(255, 61, 242, 0.16));
+  mix-blend-mode: screen;
+  animation: phase-float 5.5s ease-in-out infinite;
+}
+
+.phase-halo {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 28px rgba(35, 247, 255, 0.12);
+}
+
+.halo-a {
+  width: 82%;
+  aspect-ratio: 1;
+  border-top-color: #29f8ff;
+  border-right-color: #ff3df2;
+  animation: phase-spin 14s linear infinite;
+}
+
+.halo-b {
+  width: 62%;
+  aspect-ratio: 1;
+  border-bottom-color: #ffe85f;
+  border-left-color: #54ff7a;
+  animation: phase-spin-rev 10s linear infinite;
+}
+
+.halo-c {
+  width: 42%;
+  aspect-ratio: 1;
+  border-top-color: #ff4438;
+  border-bottom-color: #5d85ff;
+  animation: phase-spin 7s linear infinite;
+}
+
+.phase-spark {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  z-index: 5;
+  background: #29f8ff;
+  box-shadow: 0 0 20px #29f8ff, 0 0 36px rgba(41, 248, 255, 0.55);
+  animation: phase-spark-orbit 8s linear infinite;
+}
+
+.spark-a { top: 16%; left: 23%; animation-duration: 7.8s; }
+.spark-b { top: 68%; left: 78%; background: #ff3df2; box-shadow: 0 0 20px #ff3df2; animation-duration: 10s; animation-direction: reverse; }
+.spark-c { top: 78%; left: 20%; background: #ffe85f; box-shadow: 0 0 20px #ffe85f; animation-duration: 12s; }
+
+.phase-scan {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 0%, rgba(35, 247, 255, 0.22) 48%, transparent 56%);
+  opacity: 0.0;
+  transform: translateY(-100%);
+  animation: phase-scan 4.8s ease-in-out infinite;
+}
+
+.phase-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 8;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 16px;
+  color: rgba(245, 251, 255, 0.88);
+  background: rgba(0, 0, 0, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.phase-caption strong {
+  color: #f5fbff;
+  text-shadow: 0 0 18px rgba(35, 247, 255, 0.72);
+}
+
+.phase-caption small {
+  color: #54ff7a;
+  font-weight: 850;
+  animation: phase-blink 1.8s steps(2, start) infinite;
+}
+
+@keyframes phase-spin { to { transform: rotate(360deg); } }
+@keyframes phase-spin-rev { to { transform: rotate(-360deg); } }
+
+@keyframes phase-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.018); }
+}
+
+@keyframes phase-sheen {
+  0%, 35% { transform: translateX(-70%); opacity: 0; }
+  50% { opacity: 0.18; }
+  75%, 100% { transform: translateX(70%); opacity: 0; }
+}
+
+@keyframes phase-scan {
+  0%, 58% { transform: translateY(-110%); opacity: 0; }
+  66% { opacity: 0.34; }
+  82%, 100% { transform: translateY(110%); opacity: 0; }
+}
+
+@keyframes phase-spark-orbit {
+  0% { transform: translate3d(0, 0, 0) scale(0.85); opacity: 0.42; }
+  25% { transform: translate3d(22px, -20px, 0) scale(1.2); opacity: 1; }
+  50% { transform: translate3d(0, -38px, 0) scale(0.9); opacity: 0.62; }
+  75% { transform: translate3d(-22px, -18px, 0) scale(1.12); opacity: 1; }
+  100% { transform: translate3d(0, 0, 0) scale(0.85); opacity: 0.42; }
+}
+
+@keyframes phase-blink {
+  50% { opacity: 0.35; }
+}
+
+@media (max-width: 920px) {
+  .project-feature-live {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-live-stage {
+    min-height: 360px;
+  }
+
+  .phase-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phase-live-stage *,
+  .phase-live-stage::before,
+  .phase-live-stage::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
